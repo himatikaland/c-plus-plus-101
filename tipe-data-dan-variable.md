@@ -49,19 +49,21 @@ Selain bisa dideklarasikan dengan tipe primitif seperti diatas, variable bisa ju
 
 Berikut contoh penerapan variable dalam menyimpan suatu data.
 
-	#include using namespace std; 
-	int main () { 
-		// Mendefinisikan variable : 
-		int a, b; 
-		int c; 
-		float f;
-		
-		// menginisiasi data ke variabel
-		a = 10; 
-		b = 20; 
-		c = a + b; 
-		
-		cout << c << endl ; 
-		// hasil akhirnya adalah 30
-		return 0; 
-	}
+```C++
+#include using namespace std; 
+int main () { 
+	// Mendefinisikan variable : 
+	int a, b; 
+	int c; 
+	float f;
+
+	// menginisiasi data ke variabel
+	a = 10; 
+	b = 20; 
+	c = a + b; 
+
+	cout << c << endl ; 
+	// hasil akhirnya adalah 30
+	return 0; 
+}
+```
