@@ -230,15 +230,33 @@ output:
 
 Dalam C++, struc bekerja sama dengan class, kecuali hanya ada dua perbedaan kecil. Yang paling penting adalah penyembunyian detail implementasi. Secara default, struc tidak akan menyembunyikan detail implementasinya dari siapa pun yang menggunakannya dalam kode, sedangkan class secara default menyembunyikan semua detail implementasinya dan oleh karena itu secara default mencegah programmer mengaksesnya. Tabel berikut merangkum semua perbedaan mendasar.
 
-| struct                                           | class                                                           |
-| ------------------------------------------------ | --------------------------------------------------------------- |
-| 1. Members of a class are private by default.    | 1. Members of a structure are public by default.                |
-| 2. An instance of a class is called an ‘object’. | 2. An instance of structure is called the ‘structure variable’. |
-| 3.                                               |                                                                 |
-| 4.                                               |                                                                 |
-| 5.                                               |                                                                 |
-| 6.                                               |                                                                 |
-| 7.                                               |                                                                 |
+| struct                                                                                 | class                                                                                    |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 1. anggota dari suatu class adalah private secara default/otomatis.                    | 1. anggota dari suatu struktur adalah public secara default/otomatis.                    |
+| 2. isi dari suatu class adalah object.                                                 | 2. isi dari suatu struktur adalah ‘variabel struktur’.                                   |
+| 3. anggota class atau struktur dari suatu class adalah private secara default/otomatis | 3. anggota class atau struktur dari suatu struktur adalah public secara default/otomatis |
+| 4. dideklarasikan dengan keyword ‘class’                                               | 4. dideklarasikan dengan keyword ‘struct’                                                |
+| 5. biasanya digunakan untuk abstraksi data dan inheritance/pewarisan lebih lanjut      | 5. biasanya digunakan untuk mengelompokkan data                                          |
+| 6. bisa terdapat nilai NULL dalam class                                                | 6. tidak bisa terdapat nilai NULL                                                        |
+
+bentuk class dan struct
+
+```cpp
+// struct
+    struct structure_name{
+          type structure_member1;
+          type structure_member2;
+    };
+```
+
+bentuk class
+
+```cpp
+    struct structure_name{
+          type structure_member1;
+          type structure_member2;
+    };
+```
 
 beberapa contoh penggunaan struct dan class
 
