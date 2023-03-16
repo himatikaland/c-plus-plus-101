@@ -4,15 +4,15 @@
 
 Kita sering menghadapi situasi di mana kita perlu menyimpan sekelompok data, baik itu jenis data yang serupa atau tidak serupa. Kita telah melihat Array di C++ yang digunakan untuk menyimpan set data dari jenis data yang serupa pada lokasi memori yang berdekatan.
 
-Berbeda dengan Array, Struktur di C++ adalah jenis data yang ditentukan oleh pengguna yang digunakan untuk menyimpan kelompok item dari jenis data yang tidak serupa.
+Berbeda dengan Array, struc di C++ adalah jenis data yang ditentukan oleh pengguna yang digunakan untuk menyimpan kelompok item dari jenis data yang tidak serupa.
 
-## apa itu Struct
+### apa itu Struct
 
-Struktur adalah jenis data yang ditentukan oleh pengguna dalam C/C++. Struktur membuat jenis data yang dapat digunakan untuk mengelompokkan item dengan jenis yang mungkin berbeda menjadi satu jenis data.
+struc adalah jenis data yang ditentukan oleh pengguna dalam C/C++. struc membuat jenis data yang dapat digunakan untuk mengelompokkan item dengan jenis yang mungkin berbeda menjadi satu jenis data.
 
-## Cara membuat Struct
+### Cara membuat Struct
 
-kata kunci 'struct' berguna untuk membuat structure. Sintaks umum untuk membuat struktur adalah sebagai berikut:
+kata kunci 'struct' berguna untuk membuat structure. Sintaks umum untuk membuat struc adalah sebagai berikut:
 
 ```cpp
 struct structureName{
@@ -28,8 +28,8 @@ struct structureName{
 
 struct didalam C++ dapat berisi dua jenis anggota:
 
-1. Data Member: Anggota-anggota ini adalah variabel C++ biasa. Kita dapat membuat struktur dengan variabel-variabel dari jenis data yang berbeda-beda dalam C++.
-2. Member Functions: Anggota-anggota ini adalah fungsi C++ biasa. Selain variabel, kita juga dapat menyertakan fungsi-fungsi di dalam deklarasi struktur.
+1. Data Member: Anggota-anggota ini adalah variabel C++ biasa. Kita dapat membuat struc dengan variabel-variabel dari jenis data yang berbeda-beda dalam C++.
+2. Member Functions: Anggota-anggota ini adalah fungsi C++ biasa. Selain variabel, kita juga dapat menyertakan fungsi-fungsi di dalam deklarasi struc.
 
 ### Contoh
 
@@ -50,7 +50,7 @@ void printDetails()
 
 struct diatas terdapat 3 buah integer yang digunakan untuk menyimpan data dari mahasiswa (angka roll, angka umur dan angka nilai) dan juga terdapat fungsi untuk menampilkan data tersebut.
 
-## cara mendaklarasi struct
+### cara mendaklarasi struct
 
 A structure variable can either be declared with structure declaration or as a separate declaration like basic types.
 
@@ -58,7 +58,7 @@ variable struct bisa di deklarasi dengan 2 cara: deklarasi struct atau memisa de
 
 ### Contoh
 
-Pernyataan variabel dengan deklarasi struktur.
+Pernyataan variabel dengan deklarasi struc.
 Variabel p1 dideklarasikan dengan 'Point'.
 
 ```cpp
@@ -85,7 +85,7 @@ int main()
 
 ### cara menginisisasi member struct
 
-Anggota struktur tidak dapat diinisialisasi dengan deklarasi. Sebagai contoh, program C berikut gagal dalam kompilasi. Namun, dianggap benar dalam C++11 dan versi yang lebih baru.
+Anggota struc tidak dapat diinisialisasi dengan deklarasi. Sebagai contoh, program C berikut gagal dalam kompilasi. Namun, dianggap benar dalam C++11 dan versi yang lebih baru.
 
 ```cpp
 struct Point
@@ -97,7 +97,7 @@ struct Point
 
 Alasan untuk kesalahan di atas adalah sederhana, ketika suatu jenis data dideklarasikan, tidak ada memori yang dialokasikan untuknya. Memori dialokasikan hanya ketika variabel dibuat.
 
-**Anggota struktur dapat diinisialisasi dengan deklarasi di C++. Sebagai contoh, program C++ berikut berhasil dieksekusi tanpa melemparkan kesalahan apapun.**
+**Anggota struc dapat diinisialisasi dengan deklarasi di C++. Sebagai contoh, program C++ berikut berhasil dieksekusi tanpa melemparkan kesalahan apapun.**
 
 ```cpp
 // didalam C++ kita bisa menginisialisasi variabel dengan deklarasi di struct.
@@ -225,3 +225,206 @@ int main()
 
 output:
 1 2
+
+## perbedaan struct dan class
+
+Dalam C++, struc bekerja sama dengan class, kecuali hanya ada dua perbedaan kecil. Yang paling penting adalah penyembunyian detail implementasi. Secara default, struc tidak akan menyembunyikan detail implementasinya dari siapa pun yang menggunakannya dalam kode, sedangkan class secara default menyembunyikan semua detail implementasinya dan oleh karena itu secara default mencegah programmer mengaksesnya. Tabel berikut merangkum semua perbedaan mendasar.
+
+| struct                                           | class                                                           |
+| ------------------------------------------------ | --------------------------------------------------------------- |
+| 1. Members of a class are private by default.    | 1. Members of a structure are public by default.                |
+| 2. An instance of a class is called an ‘object’. | 2. An instance of structure is called the ‘structure variable’. |
+| 3.                                               |                                                                 |
+| 4.                                               |                                                                 |
+| 5.                                               |                                                                 |
+| 6.                                               |                                                                 |
+| 7.                                               |                                                                 |
+
+beberapa contoh penggunaan struct dan class
+
+1. member dari class private secara default, sedangkan member dari struct public secara default.
+
+program 1:
+
+```cpp
+// program C++ untuk menunjukkan bahwa member dari class adalah private secara default
+#include <iostream>
+
+using namespace std;
+
+class Test {
+    // x is private
+    int x;
+};
+
+int main()
+{
+    Test t;
+    // compiler error karena x adalah private
+    t.x = 20;
+
+    return t.x;
+}
+```
+
+Time Complexity: O(1)
+Auxiliary Space: O(1)
+
+Output:
+
+./cf03c8d1-d4a3-43ea-a058-fe5b5303167b.cpp: In function 'int main()':
+./cf03c8d1-d4a3-43ea-a058-fe5b5303167b.cpp:10:9: error: 'int Test::x' is private
+int x;
+^
+./cf03c8d1-d4a3-43ea-a058-fe5b5303167b.cpp:18:7: error: within this context
+t.x = 20;
+^
+./cf03c8d1-d4a3-43ea-a058-fe5b5303167b.cpp:10:9: error: 'int Test::x' is private
+int x;
+^
+./cf03c8d1-d4a3-43ea-a058-fe5b5303167b.cpp:20:14: error: within this context
+return t.x;
+^
+
+Program 2:
+
+```cpp
+// C++ program untuk menunjukkan bahwa member dari struktur adalah public secara default
+#include <iostream>
+
+using namespace std;
+
+struct Test {
+	// x adalah public
+	int x;
+};
+
+int main()
+{
+	Test t;
+	t.x = 20;
+
+	// berjalan lancar karena x public
+	cout << t.x;
+}
+```
+
+output:
+20
+
+Time Complexity: O(1)
+Auxiliary Space: O(1)
+
+2. sebuah class dideklarasikan menggunakan kata kunci class, dan sebuah struktur dideklarasikan menggunakan kata kunci struct.
+
+program 1:
+
+```cpp
+class ClassName {
+private:
+    member1;
+    member2;
+
+public:
+    member3;
+    .
+    .
+    memberN;
+};
+```
+
+program 2:
+
+```cpp
+struct StructureName {
+    member1;
+    member2;
+    .
+    .
+    .
+    memberN;
+};
+```
+
+3. sebuah class memiliki penurunun/inheritance, sedangkan sebuah struktur tidak memiliki penurunun/inheritance.
+
+program 1:
+
+```cpp
+// C++ program untuk menunjukkan Inheritance dengan class.
+#include <iostream>
+
+using namespace std;
+
+// Base class
+class Parent {
+public:
+    int x;
+};
+
+// penurunan/inheritance dari class Parent
+class Child : public Parent {
+public:
+    int y;
+};
+
+int main()
+{
+    Child obj1;
+
+    // sebuah objek dari class Child memiliki semua data member dan fungsi member dari class Parent.
+    obj1.y = 7;
+    obj1.x = 91;
+    cout << obj1.y << endl;
+    cout << obj1.x << endl;
+
+    return 0;
+}
+```
+
+Output:
+7
+91
+
+Time Complexity: O(1)
+Auxiliary Space: O(1)
+
+program 2:
+
+```cpp
+
+// C++ Program to demonstrate Inheritance with structures.
+#include <iostream>
+
+using namespace std;
+
+struct Base {
+public:
+    int x;
+};
+
+// is equivalent to
+// struct Derived : public Base {}
+struct Derived : Base {
+public:
+    int y;
+};
+
+int main()
+{
+    Derived d;
+
+    // Works fine because inheritance
+    // is public.
+    d.x = 20;
+    cout << d.x;
+    cin.get();
+    return 0;
+}
+```
+
+Output:
+20
+
+Time Complexity: O(1)
+Auxiliary Space: O(1)
