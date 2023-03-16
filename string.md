@@ -1,5 +1,7 @@
 # C PLUS PLUS 101 BY HIMATIKA
+
 ## Sejarah String
+
 Konsep String pertama kali ditemukan pada tahun 1960-an ketika bahasa pemrograman komputer FORTRAN pertama kali dikembangkan. Pada waktu itu, string digunakan untuk merepresentasikan teks dalam bahasa pemrograman.
 
 Kemudian, pada tahun 1970-an, ketika bahasa pemrograman C pertama kali dikembangkan, string juga menjadi fitur yang sangat penting dalam bahasa tersebut. Pada waktu itu, string direpresentasikan sebagai array karakter dan diakhiri dengan karakter null (nul atau '\0'). Bahasa pemrograman C juga menyediakan sejumlah fungsi bawaan untuk memanipulasi string, seperti strcpy() dan strcat().
@@ -8,8 +10,8 @@ Pada tahun 1980-an, bahasa pemrograman C++ memperkenalkan konsep objek yang memu
 
 Pada saat ini, string tetap menjadi salah satu fitur kunci dalam bahasa pemrograman komputer modern, dan terus berkembang dengan dukungan yang lebih baik untuk operasi string dan karakter. Banyak bahasa pemrograman modern, seperti Python dan JavaScript, juga memiliki dukungan yang kuat untuk string dan menawarkan banyak fitur dan fungsi untuk memanipulasi string dengan mudah.
 
-
 ## Apa itu String pada C++?
+
 String pada C++ adalah tipe data yang digunakan untuk merepresentasikan teks atau karakter dalam sebuah program. String pada C++ sebenarnya adalah kumpulan karakter atau array karakter yang diletakkan dalam satu variabel.
 
 Dalam bahasa C++, string didefinisikan dengan tipe data string yang didefinisikan di dalam library string. Anda harus menyertakan library ini di dalam program Anda jika ingin menggunakan tipe data string. Sebagai contoh, untuk menggunakan tipe data string, Anda bisa menuliskan kode seperti ini di awal program:
@@ -18,6 +20,7 @@ Dalam bahasa C++, string didefinisikan dengan tipe data string yang didefinisika
 #include <string>
 using namespace std;
 ```
+
 Setelah library string dimuat, Anda dapat membuat variabel string dengan cara yang sama seperti variabel biasa. Sebagai contoh, kode berikut akan membuat variabel string bernama nama dan mengisinya dengan teks "John Doe":
 
 ```C++
