@@ -14,9 +14,9 @@ Dengan berkembangnya teknologi dan kebutuhan pemrograman yang semakin kompleks, 
 
 ## Apa itu Looping pada C++?
 
-Looping pada C++ adalah cara untuk melakukan pengulangan terhadap suatu kode program secara berulang-ulang sesuai dengan kondisi yang telah ditentukan. Terdapat dua jenis looping pada C++, yaitu:
+Looping pada C++ adalah cara untuk melakukan pengulangan terhadap suatu kode program secara berulang-ulang sesuai dengan kondisi yang telah ditentukan. Dalam C++ terdapat beberapa bentuk perulangan yang dapat digunakan yaitu for, for-each, while, do-while.
 
-For Loop
+1. For Loop
 For Loop digunakan untuk melakukan pengulangan sebanyak jumlah tertentu yang sudah ditentukan sebelumnya.
 Contoh penggunaan For Loop pada C++:
 ```cpp
@@ -26,8 +26,23 @@ for (int i = 0; i < 10; i++) {
 ```
 Penjelasan: Loop akan berjalan dari 0 hingga 9, karena batas atasnya adalah 10 dan menggunakan operator < artinya loop berjalan selama nilai i kurang dari 10. Setiap kali loop berjalan, nilai i akan bertambah 1.
 
-While Loop
-While Loop digunakan untuk melakukan pengulangan selama kondisi yang ditentukan masih terpenuhi.
+2. For-Each Loop
+Perulangan for-each (for-each loop) adalah perulangan yang berfungsi untuk mengakses seluruh elemen dari array.
+Contoh penggunaan For-Each Loop pada C++:
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    int numbers[] = { 10, 20, 30, 40, 50 };
+    for (int number : numbers) {
+        cout << number << endl;
+    }
+}
+```
+
+3. While Loop
+While Loop digunakan untuk melakukan pengulangan selama kondisi yang ditentukan masih terpenuhi. 
 Contoh penggunaan While Loop pada C++:
 
 ```cpp
@@ -38,3 +53,33 @@ while (i < 10) {
 }
 ```
 Penjelasan: Loop akan berjalan selama nilai i kurang dari 10. Setiap kali loop berjalan, nilai i akan bertambah 1. Perbedaan dengan For Loop adalah kita harus menginisialisasi nilai i terlebih dahulu sebelum menggunakan While Loop.
+
+4. Do-While Loop
+Do-while loop mirip dengan while loop, namun blok kode dieksekusi setidaknya satu kali bahkan jika kondisi tidak terpenuhi. Kondisi dievaluasi setelah blok kode dieksekusi. Adapun perbedaannya adalah sbb:
+
+- Pada perulangan while dilakukan validasi sebelum masuk ke dalam perulangan
+- Pada perulangan do-while masuk perulangan terlebih dahulu minimal 1x putaran untuk kemudian di validasi di akhir sebelum masuk putaran berikutnya
+Contoh penggunaan do-while loop dalam bahasa C++:
+```cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+	int number = 50;
+	while (number < 10)
+	{
+		cout << "while " << number;
+	}
+	do
+	{
+		cout << "do-while " << number;
+	} while (number < 10);
+}
+```
+Keterangan program:
+
+- Pada contoh di atas baik while maupun do-while memiliki kondisi yang sama yaitu number < 10
+- Inisialisasi number adalah 50 sehingga baik while maupun do-while tidak memenuhi kondisi number < 10
+- Ketika program dijalankan
+    * Perulangan while tidak masuk perulangan sama sekali karena validasi dilakukan di awal dan kondisi tidak memenuhi 
+    * Perulangan do-while masuk minimal 1x putaran sehingga mencetak "do-while 50" sebelum akhirnya perulangan berhenti karena kondisi tidak memenuhi
